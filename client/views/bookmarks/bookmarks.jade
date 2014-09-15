@@ -1,0 +1,19 @@
+h3 Bookmarks
+
+
+.row
+  .col-xs-3
+    form(novalidate, name='categoryForm', role='form')
+      .form-group
+        label(for='name') Name
+        input.form-control#name(name='name', type='text', ng-model='name', required, autofocus)
+      button.btn.btn-success(ng-show='categoryForm.$valid', ng-click='addCategory()') Add Category!
+.row
+  .col-xs-6
+    table.table.table-bordered.table-primary
+      thead
+        tr
+          th Name
+      tbody
+        tr(ng-repeat='c in categories')
+          td {{c.name}}
